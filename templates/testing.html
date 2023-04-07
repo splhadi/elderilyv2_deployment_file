@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Google Sign-In</title>
+
+    <!-- Include the Google Sign-In API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script>
+        // Initialize the Google Sign-In API
+        gapi.load('auth2', function() {
+            gapi.auth2.init({
+                client_id: '8823199232-4rranl775jq8n0g60viqp2gg7aq8oq26.apps.googleusercontent.com'
+            });
+        });
+
+        // Handle the Google Sign-In button click event
+        function onSignIn(googleUser) {
+            // Get the ID token from the Google user object
+            var id_token = googleUser.getAuthResponse().id_token;
+
+            // Send the ID token to your server for authentication
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/login');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    console.log('User ID:', xhr.responseText);
+                } else {
+                    console.log('Error:', xhr.statusText);
+                }
+            };
+            xhr.send('id_token=' + encodeURIComponent(id_token));
+        }
+    </script>
+</head>
+<body>
+
+<!-- Render the Google Sign-In button -->
+  <div class="g-signin2" data-onsuccess="onSignIn"><button type='button'>
+    Test
+    </button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>testing</title>
+  </head>
+  <body>
+    <p><!-- Include the Google Sign-In API -->
+      <script src="https://apis.google.com/js/platform.js" async="" defer="defer"></script>
+      <script>
+// Initialize the Google Sign-In API
+gapi.load('auth2', function() {
+    gapi.auth2.init({
+        client_id: 'YOUR_CLIENT_ID'
+    });
+});
+
+// Handle the Google Sign-In button click event
+function onSignIn(googleUser) {
+    // Get the ID token from the Google user object
+    var id_token = googleUser.getAuthResponse().id_token;
+
+    // Send the ID token to your server for authentication
+    $.ajax({
+        type: 'POST',
+        url: '/login',
+        data: {id_token: id_token},
+        success: function(response) {
+            console.log('User ID:', response);
+        },
+        error: function(xhr, status, error) {
+            console.log('Error:', error);
+        }
+    });
+}
+</script><!-- Render the Google Sign-In button --> </p>
+    <div class="g-signin2" data-onsuccess="onSignIn"> <button type="button" style="height: 67px; width: 158px;">Test
+        inside div </button> </div>
+    <p></p>
+    <button class="g-signin2" data-onsuccess="onSignIn" type="button" style="height: 67px; width: 158px;">Test
+      </button>
+  </body>
+</html>

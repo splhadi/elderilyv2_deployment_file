@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="file:///C:/Users/abdul/OneDrive%20-%20National%20University%20of%20Singapore/uni%20year%20three%20final%20year/EE4002D/HTML%20projects/bluegriffon/bootstrap.css"
+      title="Bootstrap Cyborg">
+  </head>
+  <body> <br>
+    <div style="text-align: center;">
+      <h1><b>Welcome to the Elderily application!</b></h1>
+    </div>
+    <div style="text-align: center;">
+      <h4>Login to get started</h4>
+    </div>
+    <div style="text-align: center;"><br>
+    </div>
+    <div style="text-align: center;"> </div>
+    <div style="text-align: center;"><br>
+    </div>
+    <div style="text-align: center;"><button name="Login" value="False" autofocus="autofocus"
+        href="/login" type="button" style="height: 46px; width: 95px;" class="btn-outline-info btn-danger btn btn-light"
+        role="button">Login</button></div>
+    <div style="text-align: center;"><br>
+    </div>
+    <div style="text-align: center;"><br>
+    </div>
+    <footer>
+      <table style="width: 913px; height: 70px;" border="1">
+        <tbody>
+          <tr>
+            <td class="bg-secondary"><img src="file:///C:/Users/abdul/OneDrive%20-%20National%20University%20of%20Singapore/uni%20year%20three%20final%20year/EE4002D/Python%20projects/web%20design/gui%20design%20ver%203/NUS-logo.png"
+                alt="NIL" title="NUS logo" style="width: 222px; height: 49px;"></td>
+            <td class="bg-secondary"><span style="color: white;" class="align-items-xl-center">Copyright
+                2023 All right reserved to NUS</span></td>
+            <td class="bg-secondary">For more information </td>
+            <td class="bg-secondary">dsdc</td>
+          </tr>
+        </tbody>
+      </table>
+    </footer>
+  </body>
+</html>
